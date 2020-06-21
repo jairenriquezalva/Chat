@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+a {
+  color: inherit;
+}
+
+:root {
+  --color-primary: #59c29d;
+  --color-primary-text: #ffffff;
+  --font-style1: "Courier New";
+  --font-style2: monospace;
+}
+
+.App {
+  text-align: center;
+}
+
+.Header {
+  background-color: var(--color-primary);
+  position: sticky;
+  color: var(--color-primary-text);
+  top: 0;
+  padding: 10px 4px;
+  font-family: var(--font-style2);
+}
+@media (min-width: 800px) {
+  .Header {
+    display: flex;
+  }
+}
+
+.Header a:active {
+  color: black;
+}
