@@ -5,7 +5,7 @@ function ChatSettings(props){
     const nicknameInput = useRef(null);
     return (
         <div>
-            <h2>Nickname:</h2>
+            <h4>Nickname:</h4>
             <input ref={nicknameInput} type="text"></input>
             <button onClick={handleNickChange}>Change</button>
         </div>

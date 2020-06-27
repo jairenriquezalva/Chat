@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from 'styled-components'
-import Message from 'Message';
-import ChatSettings from 'ChatSettings'
+import Message from 'components/chat/Message';
+import ChatSettings from 'components/chat/ChatSettings'
 
 const ChatContainer = styled.div`
   display: flex;
@@ -56,7 +56,7 @@ export default function Chat() {
 
   return (
     <ChatContainer>
-      <h1>Chat</h1>
+      <h2>Chat</h2>
       <ChatSettings socket={ChatSocket}/>
       <ChatContent>
         {messages.map((val)=><Message key={1}>{val.value}</Message>)}
