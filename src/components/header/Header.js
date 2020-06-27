@@ -28,8 +28,8 @@ const StyledLink = styled(Link)`
 
 const Header = () => (
     <StyledHeader>
-        <StyledLink to="/Page1">I'll route to page1</StyledLink>
-        <StyledLink to="/Page2">I'll route to page2</StyledLink>
+        <StyledLink to="/Page1">Chat</StyledLink>
+        <StyledLink to="/Page2">Minigame</StyledLink>
     </StyledHeader>
 )
 

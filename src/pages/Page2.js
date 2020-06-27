@@ -1,6 +1,7 @@
 import React from 'react'
 import { Component } from "react";
-  
+import Container from "components/Container"
+
 class Page2 extends Component {
 
   componentDidMount = () =>{
@@ -14,13 +15,13 @@ class Page2 extends Component {
   // }
 
   render(){ return (
-      <div className="Info">
+      <Container>
         <h1>About us:</h1>
         <div>lorem asdfasdfasfasdfasdfdsfadfssadfsdfda</div>
         <div>ChatInput</div>
         <div id="game">
         </div>
-      </div>
+      </Container>
     );
   }
 }

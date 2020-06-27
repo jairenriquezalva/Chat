@@ -1,10 +1,11 @@
 import React from 'react'
 import Chat from 'components/chat/Chat'
+import Container from 'components/Container'
 
 const ChatPage = () => (
-    <div>
+    <Container>
         <Chat/>
-    </div>
+    </Container>
 )
 
 export default ChatPage;
