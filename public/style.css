@@ -1,0 +1,11 @@
+:root {
+    --color-primary: #59c29d;
+    --color-primary-text: #ffffff;
+    --font-style1: "Courier New";
+    --font-style2: monospace;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
