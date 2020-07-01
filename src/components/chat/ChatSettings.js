@@ -1,19 +1,23 @@
 import React,{useRef} from 'react'
-import styled from 'styled-components'
+import {StyledButton,StyledTextbox,FlexContainer} from 'components/StyledComponents'
 
-function ChatSettings(props){
+const ChatSettings = (props)=>{
+
     const nicknameInput = useRef(null);
-    return (
-        <div>
-            <h4>Nickname:</h4>
-            <input ref={nicknameInput} type="text"></input>
-            <button onClick={handleNickChange}>Change</button>
-        </div>
-    )    
-    function handleNickChange(){
-        const newNick = nicknameInput.current.value;
-        props.socket.send(JSON.stringify({context: 'lobby', type: 'nickname', value: newNick}));
+
+    function handleNickChange(e){
+        e.preventDefault();
+        let newNick = nicknameInput.current.value;
+        props.action(newNick);              
+        nicknameInput.current.value = "";
     }
+
+    return (
+        <FlexContainer>
+            <StyledTextbox ref={nicknameInput} placeholder="nickname"></StyledTextbox>
+            <StyledButton onClick={handleNickChange}></StyledButton>
+        </FlexContainer>
+    )    
 }
 
 export default ChatSettings;

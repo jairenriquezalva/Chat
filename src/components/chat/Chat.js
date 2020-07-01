@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import styled from 'styled-components'
+import styled from 'styled-components';
 import Message from 'components/chat/Message';
-import ChatSettings from 'components/chat/ChatSettings'
+import ChatHeader from 'components/chat/ChatHeader';
+import ChatSettings from 'components/chat/ChatSettings';
+import ChatForm from 'components/chat/ChatForm.js';
 
 const ChatContainer = styled.div`
   display: flex;
@@ -22,10 +24,9 @@ const ChatContent = styled.div`
 const wsUri = "ws://localhost:3000/";
 const protocol = 'echo-protocol';
 
-export default function Chat() {
+const Chat = () => {
   const [ChatSocket, setChatSocket] = useState();
   const [messages, setMessages] = useState([]);
-  const ChatMessageInput = useRef("");
 
   useEffect(() => {
     if (!ChatSocket) {
@@ -36,39 +37,36 @@ export default function Chat() {
     }
   }, [ChatSocket]);
 
-  function manageOnOpen(e) {}
+  function manageOnOpen(e){}
 
-  function manageSubmit(e) {
-    e.preventDefault();
-    ChatSocket.send(JSON.stringify({context: 'chat', type:'message', value: ChatMessageInput.current.value}));
-    ChatMessageInput.current.value = "";
+  function chatSendMessage(message) {
+    ChatSocket.send(JSON.stringify({context: 'chat', type:'sendMessage', value: message}));
+  }
+
+  function modifyNickname(nickname){
+    ChatSocket.send(JSON.stringify({context: 'lobby', type:'changeNickname', value: nickname}))
   }
 
   function manageMessageRecived(msg) {
     var msg = JSON.parse(msg.data);
-      console.log('context :'+msg.context);
-      console.log('type:' + msg.type);
-      console.log('value:' + msg.value);
-      messages.push(msg);
+    console.log('context :'+msg.context);
+    console.log('type:' + msg.type);
+    console.log('value:' + msg.value);
+    messages.push(msg);
     setMessages(messages.map(v=>v));
     console.log(messages)
   }
 
   return (
     <ChatContainer>
-      <h2>Chat</h2>
-      <ChatSettings socket={ChatSocket}/>
+      <ChatHeader/>
+      <ChatSettings action={modifyNickname}/>
       <ChatContent>
         {messages.map((val)=><Message key={1}>{val.value}</Message>)}
       </ChatContent>
-      <div>
-        <form onSubmit={e => manageSubmit(e)} autoComplete="off">
-          <input ref={ChatMessageInput} type="text" placeholder="message" />
-          <input type="submit" />
-        </form>
-      </div>
+      <ChatForm action={chatSendMessage}/>
     </ChatContainer>
   );
 }
 
-
+export default Chat;
