@@ -1,0 +1,12 @@
+general structure:
+{
+    context: (lobby|chat),
+    type: (message|sendMessage|changeNickname),
+    value: (
+        if(type==message)
+        {
+            sender: (string)
+            text: (string)
+        }
+    )
+}

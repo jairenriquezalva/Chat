@@ -6,6 +6,7 @@ const MessageContainer = styled.div`
     margin-top: 5px;
 `
 const ChatMessage = styled.div`
+    padding: 5px;
     position: relative;
     right: -82px;
     background: ${(props)=>props.color};
