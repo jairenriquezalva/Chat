@@ -26,7 +26,7 @@ const StyledTextbox = styled.input.attrs({type: "text"})`
     outline: none;
     background: white;
     &:focus{
-        background: #e5f4ea;
+        background: #eef2ee;
     }
     padding-top: 3px;
     caret-color: #35646a;

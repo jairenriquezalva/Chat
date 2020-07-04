@@ -26,6 +26,9 @@ const MessageTail = styled.div`
     z-index: 2;
     border-bottom-right-radius: 20px;
 `
+const MessageHeader = styled.div`
+    font-size: 8px;
+`
 
 function Message(props){
     let color = 'white';
@@ -35,6 +38,7 @@ function Message(props){
     return (
         <MessageContainer>
             <ChatMessage className="ChatMessage" color={color}>
+                <MessageHeader>{props.sender}</MessageHeader>
                 {props.children}
             </ChatMessage>
             <MessageTail className="ChatMessageTail" color={color}/>

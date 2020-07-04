@@ -14,7 +14,7 @@ const Box = styled.div`
 const ChatContent = ({messages}) => {
     return (
     <Box>
-        {messages.map((m,index)=><Message key={index}>{m}</Message>)}
+        {messages.map((m,index)=><Message key={index} sender={m.sender}>{m.text}</Message>)}
     </Box>
     )
 }
