@@ -1,5 +1,5 @@
 # Chat
-Un clinete de chat simple realizado con react.js utilizando websockets.
+Un cliente de chat simple realizado con react.js utilizando websockets.
 ## Preview
 ![](front.png)
 ## Prerequisitos
