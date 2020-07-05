@@ -9,7 +9,6 @@ const ChatSettings = (props)=>{
         e.preventDefault();
         let newNick = nicknameInput.current.value;
         props.action(newNick);              
-        nicknameInput.current.value = "";
     }
 
     return (
