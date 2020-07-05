@@ -11,11 +11,17 @@ const Box = styled.div`
   margin-top: 5px;
 `
 
+const Container = styled.div`
+  padding: 10px;
+`
+
 const ChatContent = ({messages}) => {
     return (
-    <Box>
+    <Container>
+      <Box>
         {messages.map((m,index)=><Message key={index} sender={m.sender}>{m.text}</Message>)}
-    </Box>
+      </Box>
+    </Container>
     )
 }
 

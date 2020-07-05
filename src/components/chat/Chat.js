@@ -7,12 +7,9 @@ import ChatContent from './ChatContent';
 import socket from './Socket';
 
 const ChatContainer = styled.div`
-  height: 500px;
   width: 250px;
-  padding: 0px 30px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   background: #bccbbc;
   border: 2px solid #35646a;
   box-shadow: inset 0px 0px 4px #00000051;

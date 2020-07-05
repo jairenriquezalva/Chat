@@ -8,7 +8,7 @@ const MessageContainer = styled.div`
 const ChatMessage = styled.div`
     padding: 5px;
     position: relative;
-    right: -82px;
+    right: -60px;
     background: ${(props)=>props.color};
     width: 150px;
     border-radius: 8px;
@@ -27,7 +27,9 @@ const MessageTail = styled.div`
     border-bottom-right-radius: 20px;
 `
 const MessageHeader = styled.div`
-    font-size: 8px;
+    font-size: 10px;
+    color: #35646a;
+    padding: 3px;
 `
 
 function Message(props){

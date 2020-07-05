@@ -38,6 +38,7 @@ const FlexContainer = styled.form`
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    margin: 10px;
 `
 
 export {StyledButton,StyledTextbox,FlexContainer};
